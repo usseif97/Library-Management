@@ -45,5 +45,4 @@ return_date: LocalDate - nullable
 
 
 # Relationship
-**Book & Borrow are**
 ![Screenshot 2024-04-19 235551](https://github.com/usseif97/Library-Management/assets/47598030/68653deb-3335-4f01-9703-ae05554e0984)
