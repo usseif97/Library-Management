@@ -1,3 +1,7 @@
+# Spark Intializer  
+![Screenshot 2024-04-19 224731](https://github.com/usseif97/Library-Management/assets/47598030/7706a629-a1b5-462b-a21f-05e414619fe7)  
+
+  
 # Entities
 
 ## 1) Book
@@ -42,6 +46,27 @@ address: Text
 dob: LocalDate
 age: Integer - Transient
 ```
+**Get all Patrons**  
+![Screenshot 2024-04-20 000724](https://github.com/usseif97/Library-Management/assets/47598030/c5940220-6419-41a2-b856-071d5d7df4bb)  
+
+
+**Get Patron by ID**  
+![Screenshot 2024-04-20 000737](https://github.com/usseif97/Library-Management/assets/47598030/7b075702-fdd7-406b-bc1d-48a6b40a8b39)  
+
+
+**Add Patron**  
+![Screenshot 2024-04-20 000855](https://github.com/usseif97/Library-Management/assets/47598030/4c9f0389-76bd-4e86-9588-dfc7089a6e1d)  
+
+
+**Update Patron**  
+![Screenshot 2024-04-20 000940](https://github.com/usseif97/Library-Management/assets/47598030/9ebaa15e-ddd4-48e0-a886-58a5e0eb9f26)  
+
+
+**Delete Patron**  
+![Screenshot 2024-04-20 000959](https://github.com/usseif97/Library-Management/assets/47598030/fe5ad195-4c77-4146-a8ff-8546b85113eb)  
+
+  
+
 
 ## 3) Borrow
 
@@ -56,8 +81,17 @@ is_returned: boolean - default=false
 return_date: LocalDate - nullable
 ```
 **is_returned,** refer to the borrowed book have returned or not  
-**return_date,** refer to the date that the book is supposed to be returned back by the patron
-
+**return_date,** refer to the date that the book is supposed to be returned back by the patron  
+  
+**Add a borrow of a book by a patron**  
+![Screenshot 2024-04-19 210443](https://github.com/usseif97/Library-Management/assets/47598030/04cf9f9d-754c-489e-a4c9-db36dc3335c8)  
+![Screenshot 2024-04-19 210514](https://github.com/usseif97/Library-Management/assets/47598030/5238c549-cdce-4cbc-a5a4-0511053ad797)  
+![Screenshot 2024-04-19 210520](https://github.com/usseif97/Library-Management/assets/47598030/4e43fa9c-cb22-4f94-9ba8-300b672ffc94)  
+  
+**Record the return of a borrowed book by a patron**  
+![Screenshot 2024-04-19 210539](https://github.com/usseif97/Library-Management/assets/47598030/58aefdb3-3fa0-4594-90a5-e5ac0af072f1)  
+![Screenshot 2024-04-19 210547](https://github.com/usseif97/Library-Management/assets/47598030/87d86e61-16b5-4b4f-825a-0b025a1e303d)  
+  
 
 # Relationship
 ![Screenshot 2024-04-19 235551](https://github.com/usseif97/Library-Management/assets/47598030/68653deb-3335-4f01-9703-ae05554e0984)
