@@ -110,6 +110,12 @@ spring.jpa.properties.hibernate.format_sql=true
 server.error.include-message=always   
 ```
 
+# Testing  
+**Mockito framework**
+1- BookControllerTest  
+2- PatronControllerTest  
+3- BorrowControllerTest  
+  
 
 # Sample Example
 ![Screenshot 2024-04-20 045456](https://github.com/usseif97/Library-Management/assets/47598030/df45e1bb-61d8-40aa-ac30-a965b22405eb)  
