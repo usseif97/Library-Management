@@ -124,3 +124,10 @@ server.error.include-message=always
 ![Screenshot 2024-04-20 045543](https://github.com/usseif97/Library-Management/assets/47598030/7167c28a-da34-43f7-812b-db986dac465f)  
 
 
+# Project Architecture  
+![Screenshot 2024-04-20 051743](https://github.com/usseif97/Library-Management/assets/47598030/7bd9acfd-3e53-467a-bc77-c798f958f0c6)  
+
+  
+
+
+
