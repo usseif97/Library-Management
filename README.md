@@ -94,4 +94,27 @@ return_date: LocalDate - nullable
   
 
 # Relationship
-![Screenshot 2024-04-19 235551](https://github.com/usseif97/Library-Management/assets/47598030/68653deb-3335-4f01-9703-ae05554e0984)
+![Screenshot 2024-04-19 235551](https://github.com/usseif97/Library-Management/assets/47598030/68653deb-3335-4f01-9703-ae05554e0984)  
+
+
+# Database  
+**Postgres database used with the following configuration**
+```java
+spring.datasource.url=jdbc:postgresql://localhost:5432/library  
+spring.datasource.username= postgres  
+spring.datasource.password= 2011y  
+spring.jpa.hibernate.ddl-auto=update    
+spring.jpa.show-sql=true  
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+server.error.include-message=always   
+```
+
+
+# Sample Example
+![Screenshot 2024-04-20 045456](https://github.com/usseif97/Library-Management/assets/47598030/df45e1bb-61d8-40aa-ac30-a965b22405eb)  
+![Screenshot 2024-04-20 045509](https://github.com/usseif97/Library-Management/assets/47598030/6d13a769-4456-450a-b7bd-37fa51815b63)  
+![Screenshot 2024-04-20 045529](https://github.com/usseif97/Library-Management/assets/47598030/bb4d31d5-d838-4c3f-a633-c4fa5b98c5e8)  
+![Screenshot 2024-04-20 045543](https://github.com/usseif97/Library-Management/assets/47598030/7167c28a-da34-43f7-812b-db986dac465f)  
+
+
