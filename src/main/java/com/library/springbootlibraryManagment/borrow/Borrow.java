@@ -1,8 +1,6 @@
 package com.library.springbootlibraryManagment.borrow;
 
 import java.time.LocalDate;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.library.springbootlibraryManagment.book.Book;
 import com.library.springbootlibraryManagment.patron.Patron;
 
@@ -17,6 +15,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import lombok.Builder;
+import lombok.Data;
 
 @Entity(name = "Borrow")
 @Table(name = "borrow", uniqueConstraints = {
@@ -26,6 +26,8 @@ import jakarta.persistence.UniqueConstraint;
         )
     }
 )
+@Builder
+@Data
 public class Borrow {
     @Id
     @SequenceGenerator(
@@ -83,6 +85,18 @@ public class Borrow {
         this.id = id;
         this.patron = patron;
         this.book = book;
+        this.returnDate = returnDate;
+    }
+
+    public Borrow(Long id,
+        Patron patron,
+        Book book,
+        boolean isReturned,
+        LocalDate returnDate) {
+        this.id = id;
+        this.patron = patron;
+        this.book = book;
+        this.isReturned = isReturned;
         this.returnDate = returnDate;
     }
 

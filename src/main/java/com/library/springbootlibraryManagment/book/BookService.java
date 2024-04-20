@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class BookService {
 
     private final BookRepository bookRepository;
@@ -22,6 +24,7 @@ public class BookService {
     }
 
     public List<Book> getBooks() {
+        log.info("Request for getBooks");
         return bookRepository.findAll();
     }
 
@@ -45,10 +48,6 @@ public class BookService {
     public Book deleteBook(Long bookId) {
         Book book = bookRepository.findById(bookId)
                 .orElseThrow(() -> new IllegalStateException("Book with id " + bookId + " doesn't exist"));
-        /*boolean isExist = bookRepository.existsById(bookId);
-        if (!isExist) {
-            throw new IllegalStateException("Book with id " + bookId + " doesn't exist");
-        }*/
         bookRepository.deleteById(bookId);
         return book;
     }

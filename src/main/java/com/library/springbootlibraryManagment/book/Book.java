@@ -3,11 +3,9 @@ package com.library.springbootlibraryManagment.book;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.library.springbootlibraryManagment.borrow.Borrow;
 
+import io.micrometer.common.lang.Nullable;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,14 +17,18 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import lombok.Builder;
+import lombok.Data;
 
 @Entity(name = "Book")
 @Table(
     name = "book",
     uniqueConstraints = {
+        @UniqueConstraint(name = "book_title_unique", columnNames = "title"),     
         @UniqueConstraint(name = "book_isbn_unique", columnNames = "isbn")        
     }
 )
+@Builder
 public class Book {
     @Id
     @SequenceGenerator(
@@ -76,8 +78,9 @@ public class Book {
         cascade = CascadeType.ALL,
         orphanRemoval = true,
         fetch = FetchType.LAZY
+        
     )
-    private List<Borrow> borrows = new ArrayList<>();
+    private final List<Borrow> borrows = new ArrayList<>();
 
     public Book() {}
 

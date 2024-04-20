@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping(path = "api/v1/book")
@@ -38,8 +37,6 @@ public class BookController {
     }
 
     @PostMapping
-    //@JsonIgnore
-    //@JsonProperty(access = JsonProperty.Access.READ_ONLY)
     public Book addNewBook(@RequestBody Book book) {
         return bookService.addNewBook(book);
     }

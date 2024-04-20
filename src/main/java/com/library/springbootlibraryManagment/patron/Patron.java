@@ -4,9 +4,6 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.library.springbootlibraryManagment.borrow.Borrow;
 
 import jakarta.persistence.CascadeType;
@@ -21,6 +18,7 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.persistence.UniqueConstraint;
+import lombok.Builder;
 
 @Entity(name = "Patron")
 @Table(
@@ -29,6 +27,7 @@ import jakarta.persistence.UniqueConstraint;
         @UniqueConstraint(name = "patron_email_unique", columnNames = "email")        
     }
 )
+@Builder
 public class Patron {
     @Id
     @SequenceGenerator(
@@ -89,7 +88,7 @@ public class Patron {
         orphanRemoval = true,
         fetch = FetchType.LAZY
     )
-    private List<Borrow> borrows = new ArrayList<>();
+    private final List<Borrow> borrows = new ArrayList<>();
 
     public Patron() {
     }
@@ -106,6 +105,22 @@ public class Patron {
         this.address = address;
         this.phone = phone;
         this.dob = dob;
+    }
+
+    public Patron(Long id,
+    String name,
+    String email,
+    String address,
+    String phone,
+    LocalDate dob, 
+    Integer age) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
+        this.dob = dob;
+        this.age = age;
     }
 
     public Patron(

@@ -1,5 +1,6 @@
 package com.library.springbootlibraryManagment.borrow;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,14 @@ public class BorrowService {
         return borrow;
     }
 
+    public Borrow deleteBorrow(Long borrowId) {
+        Borrow borrow = borrowRepository.findById(borrowId)
+                .orElseThrow(() -> new IllegalStateException("Borrow with id " + borrowId + " doesn't exist"));
+        borrowRepository.deleteById(borrowId);
+        return borrow;
+    }
+
+    @Transactional
     public Borrow addBorrow(Long bookId,
             Long patronId,
             Date returnDate) {
@@ -53,15 +62,12 @@ public class BorrowService {
             throw new IllegalStateException(patron.getName() + " has arleady borrowed " + book.getTitle());
         }
 
+        if(returnDate.getDate().isBefore(LocalDate.now())){
+            throw new IllegalStateException(returnDate.getDate() + " Invalid Return Date");
+        }
+
         Borrow borrow = new Borrow(patron, book, returnDate.getDate());
         borrowRepository.save(borrow);
-        return borrow;
-    }
-
-    public Borrow deleteBorrow(Long borrowId) {
-        Borrow borrow = borrowRepository.findById(borrowId)
-                .orElseThrow(() -> new IllegalStateException("Borrow with id " + borrowId + " doesn't exist"));
-        borrowRepository.deleteById(borrowId);
         return borrow;
     }
 
